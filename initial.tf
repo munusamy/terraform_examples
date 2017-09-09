@@ -5,9 +5,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-26939c30"
+  ami           = "${var.ami}"
   instance_type = "t2.micro"
-  key_name = "rllab"
+  key_name = "${var.key_name}"
   vpc_security_group_ids = ["sg-29ce644f"] 
   subnet_id = "subnet-bf4e4ce6"
   
